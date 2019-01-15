@@ -1,0 +1,28 @@
+﻿<Window x:Class="GuiPexeso.Frames.LoginFrame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GuiPexeso.Frames"
+        mc:Ignorable="d"
+        Title="Login or register as new player" Height="150" Width="300" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Margin="5" Content="Insert your unique nick"> </Label>
+        <TextBox Text="{Binding NickName ,Mode=TwoWay}" Grid.Row="1" Name="TbNick" Margin="5" Height="30" PreviewTextInput="ValidationTextBox"></TextBox>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Margin="5,3,10,3" Name="BtnLogin" Content="Login" Click="BtnLogin_OnClick"> </Button>
+            <Button Grid.Column="1" Margin="10,3,5,3" Name="BtnRegister" Content="Register" Click="BtnRegister_OnClick"></Button>
+        </Grid>
+    </Grid>
+</Window>

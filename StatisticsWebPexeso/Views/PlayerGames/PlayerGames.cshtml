@@ -1,0 +1,63 @@
+﻿@using ServiceLibraryPexeso
+@model StatisticsWebPexeso.ViewModels.PlayerNameModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Players games</h2>
+
+<!--
+<form>
+    <div class="form-group">
+        <label >Enter player nick name</label>
+        <input type="text" class="form-control" placeholder="nick name">
+    </div>
+    <button type="submit" class="btn btn-primary">Show</button>
+</form>
+-->
+@using (Html.BeginForm("PlayerGames", "PlayerGames"))
+{
+    @*@Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })*@
+<div class="form-group">
+    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
+    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.LabelFor(model => model.GameID, htmlAttributes: new { @class = "control-label" })
+    @Html.EditorFor(model => model.GameID, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+    <input type="submit" class="btn btn-primary" value="Show">
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Game id</th>
+            <th scope="col">Player</th>
+            <th scope="col">Result</th>
+            <th scope="col">Moves count</th>
+            <th scope="col">Card count</th>
+            <th scope="col">Game duration</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @{int i = 1;}
+        @foreach (GameRound item in ViewBag.Games)
+        {
+            <tr>
+                <th scope="row">@i</th>
+                <th>@item.Game.Id</th>
+                <th>@item.GamePlayer.NickName</th>
+                <th>@item.Result</th>
+                <th>@item.MovesCount</th>
+                <th>@item.Game.CardCount</th>
+                <th>@item.Game.GameDuration.ToString(@"hh\:mm\:ss")</th>
+            </tr>
+            i++;
+
+        }
+    </tbody>
+</table>
+

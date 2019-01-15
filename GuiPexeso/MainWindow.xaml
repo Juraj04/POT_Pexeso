@@ -1,0 +1,84 @@
+﻿<Window x:Class="GuiPexeso.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GuiPexeso"
+        mc:Ignorable="d"
+        Title="Pexeso" WindowState="Maximized" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <ListBox Margin="5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Name="LbPlayers">
+                <ListBoxItem>TestTestTestTestTestTestTestTest</ListBoxItem>
+            </ListBox>
+            <ComboBox Name="ComboCards" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Height="30" Margin="5,15,5,15"></ComboBox>
+
+            <Button Grid.Row="2" Grid.Column="0" Height="30" Content="Invite" Margin="5" Name="BtnInvite" Click="BtnInvite_OnClick"></Button>
+            <Button Grid.Row="2" Grid.Column="2" Height="30" Content="Message" Margin="5" Name="BtnMessage" Click="BtnMessage_OnClick"></Button>
+            <Button Grid.Row="2" Grid.Column="1" Height="30" Content="Random" Margin="5" Name="BtnRandom" Click="BtnRandom_OnClick"></Button>
+            <Button Grid.Row="2" Grid.Column="3" Height="30" Content="Refresh" Margin="5" Name="BtnRefresh" Click="BtnRefresh_OnClick"></Button>
+
+        </Grid>
+
+        <Grid  Grid.Column="1">
+            <Grid Name="GridPlay">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="6*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                   <TextBox IsReadOnly="True" Name="TbMyScore" Margin="5" Grid.Column="0"></TextBox> 
+                   <TextBox IsReadOnly="True" Name="TbOpponentsScore" Margin="5" Grid.Column="1"></TextBox> 
+                </Grid>
+                
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TabControl Margin="5" Grid.Row="0" Name="TabChat" Grid.ColumnSpan="2">
+                
+            </TabControl>
+
+            <TextBox Margin="5" Height="30" Grid.Row="1" Grid.Column="0" Name="TbChatInput"></TextBox>
+            <Button Content="Send" Grid.Row="1" Grid.Column="1" Height="30" Margin="5" Name="BtnChatSend" Click="BtnChatSend_OnClick"></Button>
+
+        </Grid>
+    </Grid>
+</Window>

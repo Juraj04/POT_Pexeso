@@ -1,0 +1,29 @@
+﻿@{
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Players";
+}
+
+<h2>Players</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nick name</th>
+    </tr>
+    
+    </thead>
+    
+    <tbody>
+    @{int i = 1;}
+    @foreach (var item in ViewBag.Players)
+    {
+        <tr>
+            <th scope="row">@i</th>
+            <th>@item</th>
+        </tr>
+        i++;
+
+    }
+    </tbody>
+</table>
